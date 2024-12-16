@@ -12,3 +12,6 @@ yarn-error.log*
 # misc
 .dockerignore
 .yarnclean
+
+# build
+/build/
