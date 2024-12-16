@@ -17,7 +17,7 @@ module.exports = (env_config) => {
 
   const IS_PROD = env.MODE === 'production';
   const PATH = 'build';
-  const PUBLIC_PATH = '/';
+  const PUBLIC_PATH = env.STATIC_PATH + '/';
 
   function getOptimization(is_prod) {
     if (is_prod) {
