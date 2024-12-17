@@ -1,0 +1,40 @@
+@use 'constants';
+
+// sm
+
+$gap_side_sm: 16px;
+$gap_sm: 12px;
+$count_columns_sm: 4;
+
+@function column_sm($count) {
+  $sm_column_1: calc(
+    (min(100vw, #{constants.$width_sm}) - #{$gap_side_sm * 2} - #{$gap_sm * 3}) / #{$count_columns_sm}
+  );
+  @return calc(#{$sm_column_1} * #{$count} + #{$gap_sm} * #{$count - 1});
+}
+
+// md
+
+$gap_side_md: 20px;
+$gap_md: 16px;
+$count_columns_md: 8;
+
+@function column_md($count) {
+  $md_column_1: calc(
+    (min(100vw, #{constants.$width_md}) - #{$gap_side_md * 2} - #{$gap_md * 7}) / #{$count_columns_md}
+  );
+  @return calc(#{$md_column_1} * #{$count} + #{$gap_md} * #{$count - 1});
+}
+
+//lg
+
+$gap_side_lg: 24px;
+$gap_lg: 20px;
+$count_columns_lg: 12;
+
+@function column_lg($count) {
+  $lg_column_1: calc(
+    (min(100vw, #{constants.$width_lg}) - #{$gap_side_lg * 2} - #{$gap_lg * 11}) / #{$count_columns_lg}
+  );
+  @return calc(#{$lg_column_1} * #{$count} + #{$gap_lg} * #{$count - 1});
+}

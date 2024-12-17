@@ -1,0 +1,16 @@
+@use 'src/styles';
+
+.content {
+  @include styles.glass(var(--glass));
+  padding: styles.gap(10) var(--gap_side);
+
+  @include styles.list(styles.gap(10));
+}
+
+.text_box {
+  @include styles.list(styles.gap(2));
+
+  .title {
+    @include styles.text_h1;
+  }
+}

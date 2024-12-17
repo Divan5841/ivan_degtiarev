@@ -1,0 +1,27 @@
+@use 'media';
+
+// title
+
+@mixin text_h1 {
+  line-height: 1;
+
+  @include media.md_up {
+    font-size: 32px;
+  }
+
+  @include media.md_down {
+    font-size: 24px;
+  }
+}
+
+@mixin text_body {
+  @include media.md_up {
+    line-height: 1.2;
+    font-size: 16px;
+  }
+
+  @include media.md_down {
+    line-height: 1.2;
+    font-size: 14px;
+  }
+}

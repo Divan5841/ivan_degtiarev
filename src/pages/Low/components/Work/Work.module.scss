@@ -1,0 +1,31 @@
+@use 'src/styles';
+
+.box {
+  @include styles.list(styles.gap(4));
+}
+
+.info {
+  @include styles.list(styles.gap(2));
+
+  a {
+    @include styles.link;
+  }
+}
+
+.title {
+  font-weight: styles.$bold;
+  @include styles.text_body;
+}
+
+.description {
+  @include styles.text_body;
+}
+
+.list {
+  padding-left: styles.gap(3);
+  @include styles.list(styles.gap(2));
+}
+
+.listItem {
+  @include styles.text_body;
+}

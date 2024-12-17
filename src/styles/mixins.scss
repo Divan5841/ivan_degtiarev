@@ -1,0 +1,169 @@
+@use 'constants' as c;
+
+@mixin glass($width) {
+  width: min(100%, #{$width});
+  margin-inline: auto;
+}
+
+@mixin max_width($width) {
+  width: min(100%, #{$width});
+}
+
+@mixin out_width($gap) {
+  margin-left: calc(#{$gap} * -1);
+  margin-right: calc(#{$gap} * -1);
+}
+
+@mixin center_row_self() {
+  margin-inline: auto;
+}
+
+@mixin center_row() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin center_child() {
+  display: grid;
+  place-items: center;
+}
+
+@mixin list($gap) {
+  & > * + * {
+    margin: $gap 0 0 0;
+  }
+}
+
+@mixin hover_enabled {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin pointer {
+  @include hover_enabled {
+    cursor: pointer;
+    @content;
+  }
+}
+
+@mixin non_clickable {
+  pointer-events: none;
+  user-select: none;
+}
+
+@mixin hide_scroll {
+  scroll-behavior: smooth;
+
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin hide_empty {
+  &:empty {
+    @include hidden;
+  }
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsis_row($row_count) {
+  display: -webkit-box;
+  -webkit-line-clamp: $row_count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: c.$br_circle;
+}
+
+@mixin aspect_ratio($ratio) {
+  @supports (aspect-ratio: 1) {
+    width: 100%;
+    aspect-ratio: $ratio;
+
+    @content;
+  }
+
+  @supports not (aspect-ratio: 1) {
+    display: flex;
+    &::after {
+      content: '';
+      padding-top: calc(100% / #{$ratio});
+    }
+
+    width: 100%;
+    height: 100%;
+
+    @content;
+  }
+}
+
+@mixin scroll_box(
+  $gap_side,
+  $gap_cell,
+  $cell_max_width,
+  $cell_min_width: false
+) {
+  overflow: auto hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: $gap_side;
+  padding-left: $gap_side;
+
+  & > *:first-child > * {
+    scroll-snap-align: start;
+  }
+
+  & > *:first-child {
+    position: relative;
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: $gap_cell;
+
+    width: max-content;
+    padding-right: $gap_side;
+
+    @if $cell_min_width {
+      grid-auto-columns: min(#{$cell_min_width}, #{$cell_max_width});
+    } @else {
+      grid-auto-columns: $cell_max_width;
+    }
+  }
+
+  @content;
+
+  @include hide_scroll;
+}
+
+@mixin focus_visible_outline {
+  outline: 1px auto var(--stroke_primary);
+}
+
+@mixin not_highlight_click {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin video_box_border_radius {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}

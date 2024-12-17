@@ -1,0 +1,7 @@
+@function gap($num) {
+  @return #{$num * 4}px;
+}
+
+@function mul($value, $count) {
+  @return calc(#{$value} * #{$count});
+}

@@ -1,0 +1,22 @@
+@use 'src/styles';
+
+.box {
+  display: grid;
+  grid-template-columns: 2fr 6fr 4fr;
+  align-items: flex-start;
+  gap: styles.$gap_lg;
+
+  padding: styles.$gap_lg;
+}
+
+.mainBox {
+  @include styles.list(styles.gap(8));
+}
+
+.title {
+  @include styles.text_h1;
+}
+
+.list {
+  @include styles.list(styles.gap(8));
+}

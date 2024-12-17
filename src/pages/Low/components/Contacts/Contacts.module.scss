@@ -1,0 +1,12 @@
+@use 'src/styles';
+
+.box {
+  display: grid;
+  justify-items: flex-start;
+  gap: styles.gap(3);
+
+  .text {
+    @include styles.link;
+    @include styles.text_body;
+  }
+}

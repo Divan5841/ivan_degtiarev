@@ -1,0 +1,51 @@
+$natural_00: #ffffff;
+$natural_10: #f7f7f7;
+$natural_30: #f8f7fb;
+$natural_50: #eeecf2;
+$natural_70: #9d9aa8;
+
+$dark_50: #bdb7ce;
+$dark_70: #918ba4;
+$dark_100: #1c1c1c;
+
+$blue_10: #eef2f9;
+$blue_30: #d8e7ff;
+
+//
+
+$primary_10: #dafff2;
+$primary_40: #78f9ce;
+$primary_50: #00db94;
+$primary_60: #01ca87; // ?
+
+$accent_10: #eee8ff;
+$accent_40: #b3acfe;
+$accent_50: #b38ffa;
+$accent_60: #9e74f2;
+
+// status
+
+$slate_blue_10: #f6f7ff;
+$slate_blue_50: #6974fa;
+
+$orange_10: #fff7ea;
+$orange_50: #ee9c44;
+
+$red_10: #fff6f6;
+$red_40: #f33a66;
+$red_50: #fe003d;
+
+$yellow: #ffdd2d;
+
+// utils
+
+$overlay: rgba(32, 24, 52, 0.48);
+$overlay_shadow: 0 0 0 100vmax rgba(32, 24, 52, 0.48);
+
+$shadow_10: 0 4px 16px -8px rgba(0, 0, 0, 0.16);
+
+// fades
+
+$background_0_fade: $natural_00;
+$background_1_fade: $natural_10;
+$background_2_fade: $dark_100;

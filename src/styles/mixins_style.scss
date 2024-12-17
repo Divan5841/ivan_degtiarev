@@ -1,0 +1,22 @@
+@use 'mixins';
+
+// $dir: 'top' | 'left' | 'right' | 'bottom'
+
+@mixin fade($dir, $color, $opacity: 1) {
+  background: linear-gradient(
+    to #{$dir},
+    rgba($color, $opacity),
+    rgba($color, 0)
+  );
+}
+
+@mixin link {
+  color: var(--link_primary);
+  text-decoration: underline;
+
+  @include mixins.hover_enabled {
+    &:hover {
+      color: var(--link_active);
+    }
+  }
+}

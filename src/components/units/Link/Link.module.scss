@@ -1,0 +1,10 @@
+@use 'src/styles';
+
+.link {
+  display: inline-block;
+  line-height: 0;
+
+  & > button {
+    width: 100%;
+  }
+}

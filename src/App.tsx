@@ -1,12 +1,15 @@
 import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+import { ErrorBoundary } from '@components/services/ErrorBoundry/ErrorBoundry';
+import { AppRoutes } from '@services/Route';
+
 export const App = () => (
   <BrowserRouter>
     <StrictMode>
-      {/*<ErrorBoundary>*/}
-      <div>qwe</div>
-      {/*</ErrorBoundary>*/}
+      <ErrorBoundary>
+        <AppRoutes />
+      </ErrorBoundary>
     </StrictMode>
   </BrowserRouter>
 );

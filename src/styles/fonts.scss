@@ -1,0 +1,11 @@
+$bold: 700;
+$semi_bold: 600;
+$medium: 500;
+$regular: 400;
+$light: 300;
+$extra_light: 200;
+$thin: 100;
+
+@mixin Arial {
+  font-family: Arial, Helvetica, sans-serif;
+}

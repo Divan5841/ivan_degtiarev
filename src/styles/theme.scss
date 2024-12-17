@@ -1,0 +1,49 @@
+@use 'colors';
+@use 'constants';
+@use 'grid';
+@use 'media';
+
+@mixin background_vars {
+  --background_0: #{colors.$natural_00};
+  --background_1: #{colors.$natural_10};
+}
+
+@mixin text_vars {
+  --text_main: #{colors.$dark_100};
+  --text_secondary: #{colors.$natural_70};
+  --text_contrast: #{colors.$natural_00};
+}
+
+@mixin link_vars {
+  --link_primary: blue;
+  --link_active: red;
+}
+
+@mixin main_theme {
+  @include background_vars;
+  @include text_vars;
+  @include link_vars;
+}
+
+@mixin sizes_adapt {
+  @include media.lg_up {
+    --glass: #{constants.$width_lg};
+    --gap_side: #{grid.$gap_side_lg};
+    --gap: #{grid.$gap_lg};
+    --br: #{constants.$br_6};
+  }
+
+  @include media.md_only {
+    --glass: #{constants.$width_md};
+    --gap_side: #{grid.$gap_side_md};
+    --gap: #{grid.$gap_md};
+    --br: #{constants.$br_5};
+  }
+
+  @include media.md_down {
+    --glass: #{constants.$width_sm};
+    --gap_side: #{grid.$gap_side_sm};
+    --gap: #{grid.$gap_sm};
+    --br: #{constants.$br_4};
+  }
+}

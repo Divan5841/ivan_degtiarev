@@ -87,6 +87,7 @@ module.exports = (env_config) => {
             options: {
               modules: {
                 localIdentName: '[hash:base64:6]',
+                namedExport: false,
               },
             },
           },
@@ -97,7 +98,20 @@ module.exports = (env_config) => {
     } else {
       rules.push({
         test: /\.(css|sass|scss)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                namedExport: false,
+              },
+            },
+          },
+          ,
+          'postcss-loader',
+          'sass-loader',
+        ],
       });
     }
 
