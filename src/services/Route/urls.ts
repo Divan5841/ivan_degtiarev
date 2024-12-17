@@ -1,6 +1,6 @@
 export enum Urls {
   Home = '/',
-  Low = '/low',
+  Low = 'low',
 
   Error404 = '*',
 }
