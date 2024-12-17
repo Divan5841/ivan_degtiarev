@@ -5,7 +5,7 @@ import { ErrorBoundary } from '@components/services/ErrorBoundry/ErrorBoundry';
 import { AppRoutes } from '@services/Route';
 
 export const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={'/ivan_degtiarev'}>
     <StrictMode>
       <ErrorBoundary>
         <AppRoutes />
