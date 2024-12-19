@@ -6,7 +6,7 @@ const setupZoom = () => {
 
 export function onResizeViewport(): void {
   const onResize = () => {
-    setupZoom();
+    // setupZoom();
   };
 
   onResize();

@@ -1,6 +1,3 @@
 import { FC } from 'react';
-import { Navigate } from 'react-router-dom';
 
-import { Urls } from '@services/Route';
-
-export const Error404: FC = () => <Navigate to={Urls.Home} replace />;
+export const Error404: FC = () => <div>{'Page not found'}</div>;

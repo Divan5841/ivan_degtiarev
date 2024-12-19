@@ -1,0 +1,27 @@
+@use 'src/styles';
+
+.mainBox {
+  position: relative;
+
+  max-width: 700px;
+  @include styles.list(styles.gap(8));
+}
+
+.title {
+  @include styles.text_h1;
+}
+
+.list {
+  @include styles.list(styles.gap(8));
+}
+
+.background {
+  position: absolute;
+  inset: -20px;
+  z-index: -1;
+  margin: 0;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.3);
+}

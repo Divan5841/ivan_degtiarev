@@ -1,22 +1,26 @@
 @use 'src/styles';
 
 .box {
+  position: relative;
+  height: 100dvh;
+}
+
+.viewer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.main {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow-y: auto;
+
   display: grid;
-  grid-template-columns: 2fr 6fr 4fr;
+  grid-template-columns: 2fr 8fr 2fr;
   align-items: flex-start;
   gap: styles.$gap_lg;
 
   padding: styles.$gap_lg;
-}
-
-.mainBox {
-  @include styles.list(styles.gap(8));
-}
-
-.title {
-  @include styles.text_h1;
-}
-
-.list {
-  @include styles.list(styles.gap(8));
 }
